@@ -1,0 +1,7 @@
+.login-container { display:flex; height:100vh; background-color:#fffdf7; }
+.image-section { width:50%; } .image-section img{ width:100%; height:100%; object-fit:cover; }
+.login-box { width:50%; padding:50px; display:flex; flex-direction:column; justify-content:center; }
+.title { font-family: "Cinzel", serif; font-size:2.2rem; margin-bottom:20px; color:#2e5d34; font-weight:700; }
+input { width:80%; padding:10px; margin-bottom:15px; border:2px solid #d2c29d; border-radius:6px; }
+.login-btn { padding:10px 30px; background:#2e7d32; border:none; color:white; border-radius:6px; width:150px; cursor:pointer; }
+@media(max-width:800px){ .login-container{ flex-direction:column } .image-section{ width:100%; height:260px } .login-box{ width:100%; padding:20px } input{ width:100% } }

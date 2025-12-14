@@ -1,0 +1,13 @@
+<section class="register-page">
+  <div class="register-image-wrapper"><img src="/assets/images/register.jpg" alt="Register" class="register-image-el" /></div>
+  <div class="register-content">
+    <h2>Create an Account</h2>
+    <form (ngSubmit)="register()" #r="ngForm">
+      <label>Username</label><input name="username" [(ngModel)]="username" required />
+      <label>Full name</label><input name="fullName" [(ngModel)]="fullName" required />
+      <label>Phone</label><input name="phone" [(ngModel)]="phoneNumber" required />
+      <label>Password</label><input name="password" type="password" [(ngModel)]="password" required />
+      <button type="submit" [disabled]="!r.form.valid">Register</button>
+    </form>
+  </div>
+</section>

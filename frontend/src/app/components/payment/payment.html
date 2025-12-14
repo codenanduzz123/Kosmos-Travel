@@ -1,0 +1,76 @@
+<section class="payment-page">
+  <div class="payment-image-wrapper">
+    <img src="/assets/images/payment.jpg" alt="Payment" class="payment-image-el" />
+  </div>
+
+  <div class="payment-content">
+    <h2>Secure Payment</h2>
+    <p class="lead">We use a secure demo form — replace with your payment gateway integration when ready.</p>
+
+    <form (ngSubmit)="processPayment(pay)" #pay="ngForm" novalidate>
+      <label>Card number</label>
+      <input
+        name="card"
+        [(ngModel)]="cardNumber"
+        maxlength="19"
+        required
+        placeholder="XXXX XXXX XXXX XXXX"
+        #card="ngModel"
+      />
+      <div *ngIf="card.invalid && card.touched" class="error">Card number is required</div>
+
+      <label>Card holder</label>
+      <input
+        name="holder"
+        [(ngModel)]="cardHolder"
+        required
+        placeholder="Full name on card"
+        #holder="ngModel"
+      />
+      <div *ngIf="holder.invalid && holder.touched" class="error">Card holder is required</div>
+
+      <div class="row">
+        <div class="col">
+          <label>Expiry</label>
+          <input
+            name="expiry"
+            type="month"
+            [(ngModel)]="expiry"
+            required
+            #expiryInput="ngModel"
+          />
+          <div *ngIf="expiryInput.invalid && expiryInput.touched" class="error">Expiry is required</div>
+        </div>
+        <div class="col">
+          <label>CVV</label>
+          <input
+            name="cvv"
+            maxlength="4"
+            [(ngModel)]="cvv"
+            required
+            pattern="[0-9]{3,4}"
+            placeholder="123"
+            #cvvInput="ngModel"
+          />
+          <div
+            *ngIf="
+              (cvvInput.invalid && cvvInput.touched) ||
+              (!isCvvValid() && cvvInput.touched)
+            "
+            class="error"
+          >
+            CVV must be 3 or 4 digits numeric
+          </div>
+        </div>
+      </div>
+
+      <button
+        type="submit"
+        [disabled]="!pay.form.valid || !isCvvValid()"
+        class="primary-btn"
+      >
+        Pay
+      </button>
+    </form>
+  </div>
+</section>

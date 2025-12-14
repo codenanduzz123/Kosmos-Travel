@@ -1,0 +1,16 @@
+<div *ngIf="tourPackage; else noPackage">
+  <h1>{{ tourPackage.name }}</h1>
+  <p><strong>State:</strong> {{ tourPackage.state }}</p>
+  <p>{{ tourPackage.description }}</p>
+  <p><strong>Price:</strong> ₹{{ tourPackage.price }}</p>
+  <p><strong>Duration:</strong> {{ tourPackage.duration }}</p>
+
+  <h3>Itinerary</h3>
+  <ul>
+    <li *ngFor="let day of tourPackage.itinerary">{{ day }}</li>
+  </ul>
+</div>
+
+<ng-template #noPackage>
+  <p>Tour package not found.</p>
+</ng-template>

@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Poppins:wght@300;600&display=swap');
+
+.welcome-hero{ min-height:66vh; background-position:center; background-size:cover; display:flex; align-items:center; justify-content:center; border-radius:12px; margin-bottom:28px; position:relative; overflow:hidden; }
+.welcome-hero::after{ content:''; position:absolute; inset:0; background: linear-gradient(180deg, rgba(6,40,20,0.25), rgba(6,40,20,0.08)); pointer-events:none; }
+.overlay{ position:relative; z-index:2; text-align:center; color: #fff; padding: 36px; max-width:960px; }
+.title{ font-family: 'Cinzel', serif; font-size:3.0rem; margin:0 0 10px; text-shadow: 0 8px 30px rgba(0,0,0,0.45); }
+.subtitle{ font-family: 'Poppins', sans-serif; font-size:1.15rem; margin-bottom:18px; opacity:0.95; }
+.actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{ text-decoration:none; padding:10px 18px; border-radius:999px; font-weight:600; display:inline-block; }
+.btn.primary{ background: linear-gradient(90deg,#e8f5e9,#dcedc8); color:#114b26; box-shadow: 0 8px 20px rgba(10,70,30,0.18); }
+.btn.ghost{ background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.18); }
+@media (max-width:720px){ .title{font-size:2rem} .subtitle{font-size:1rem} }

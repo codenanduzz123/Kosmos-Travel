@@ -1,0 +1,29 @@
+<section class="booking-page">
+  <div class="booking-image-wrapper">
+    <img src="/assets/images/booking.jpg" alt="Booking" class="booking-image-el" />
+  </div>
+
+  <div class="booking-content">
+    <h2>Book Your Tour</h2>
+    <p class="lead">Choose one of our curated South India experiences — nature, culture, and cuisine await.</p>
+
+    <form (ngSubmit)="onSubmit()" #f="ngForm" class="booking-form">
+      <label>Full name</label>
+      <input name="name" [(ngModel)]="name" required placeholder="Your full name" />
+
+      <label>Email</label>
+      <input type="email" name="email" [(ngModel)]="email" required placeholder="you@example.com" />
+
+      <label>Package</label>
+      <select name="package" [(ngModel)]="packageSelected" required>
+        <option value="" disabled selected>Select a package</option>
+        <option *ngFor="let p of packages" [value]="p">{{ p }}</option>
+      </select>
+
+      <label>Preferred date</label>
+      <input type="date" name="date" [(ngModel)]="date" required />
+
+      <button type="submit" [disabled]="!f.form.valid" class="primary-btn">Confirm Booking</button>
+    </form>
+  </div>
+</section>

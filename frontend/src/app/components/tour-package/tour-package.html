@@ -1,0 +1,37 @@
+<div class="tour-container">
+  <div class="tour-bg-wrapper">
+    <img src="/assets/images/tourpackageback.jpg" alt="Tour Background" class="tour-bg-img" />
+  </div>
+
+  <div class="tour-content">
+    <h1>Explore Our Tour Packages</h1>
+    <p>Discover the beautiful destinations of South India with our curated tour packages.</p>
+
+    <div class="package-list">
+      <div class="package-card" *ngFor="let pkg of packages">
+        <img [src]="pkg.image" alt="{{pkg.title}}" />
+        <h2>{{ pkg.title }}</h2>
+        <p><strong>State:</strong> {{ pkg.state }}</p>
+        <p>{{ pkg.description }}</p>
+        <p><strong>Price:</strong> ₹{{ pkg.price }}</p>
+        <p><strong>Duration:</strong> {{ pkg.duration }}</p>
+
+        <!-- Corrected Explore button -->
+        <button
+          [routerLink]="['/tour-package', pkg.id]"
+          style="
+            margin-top: 10px;
+            padding: 8px 14px;
+            border-radius: 6px;
+            background-color: #2e7d32;
+            color: white;
+            border: none;
+            cursor: pointer;
+          "
+        >
+          Explore
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
